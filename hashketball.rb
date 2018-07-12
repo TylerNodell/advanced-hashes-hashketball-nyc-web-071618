@@ -154,7 +154,7 @@ end
 
 def player_numbers(teamname)
   game_hash.each { |team, teamdata|
-    if teamdata[:name] == teamname
+    if teamdata[:team_name] == teamname
       teamdata[:players].map { |player, data|
         return data[:number]
       }
