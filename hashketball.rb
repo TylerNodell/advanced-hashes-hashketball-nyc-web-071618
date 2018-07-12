@@ -130,7 +130,7 @@ def shoe_size(playername)
   game_hash.each { |team, teamdata|
     teamdata[:players].each { |player, data|
       if player == playername
-        return data[:shoe_size]
+        return data[:shoe]
       end
     }
   }
