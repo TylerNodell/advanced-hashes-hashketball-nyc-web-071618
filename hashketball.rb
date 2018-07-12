@@ -250,5 +250,14 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
-  steals = game_hash
+  longsteals = game_hash[:away][:players]["Brendan Haywood"][:steals]
+  moststeals = true
+  game_hash.each { |team, teamdata|
+    teamdata[:players].each { |player, data|
+      if data[:steals] > longsteals
+        moststeals = false
+      end
+    }
+  }
+  moststeals
 end
