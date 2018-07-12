@@ -201,3 +201,21 @@ def most_points_scored
   }
   return bestplayer
 end
+
+def winning_team
+  homepoints = 0
+  awaypoints = 0
+    game_hash[:home][:players].each { |player,data|
+      homepoints += data[:points]
+    }
+    game_hash[:away][:players].each { |player,data|
+      awaypoints += data[:points]
+    }
+  if homepoints > awaypoints
+    game_hash[:home][:team_name]
+  elsif awaypoints > homepoints
+    game_hash[:away][:team_name]
+  else 
+    puts "tie game"
+  end
+end
