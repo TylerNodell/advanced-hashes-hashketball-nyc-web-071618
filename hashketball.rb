@@ -240,6 +240,7 @@ def player_with_longest_name
   game_hash.each { |team, teamdata|
     teamdata[:players].each { |player, data|
       if player.length > longestlength
+        longestlength = player.length
         longestname = player
       end
     }
