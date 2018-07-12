@@ -118,8 +118,8 @@ end
 
 def num_points_scored(playername)
   game_hash.each { |team, data|
-    players = data[:players]
-    players.each { |player, data|
+    playershash = data[:players]
+    playershash.each { |player, data|
       if player == playername
         data.fetch(:points)
       end
