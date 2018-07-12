@@ -156,6 +156,7 @@ def player_numbers(teamname)
   game_hash.each { |team, teamdata|
     if teamdata[:team_name] == teamname
       teamdata[:players].map { |player, data|
+        binding.pry
         data[:number]
       }
     end
