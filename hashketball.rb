@@ -120,7 +120,7 @@ def num_points_scored(playername)
   game_hash.each { |team, teamdata|
     teamdata[:players].each { |player, data|
       if player == playername
-        data[:points][0]
+        return data[:points][0]
       end
     }
   }
@@ -130,7 +130,7 @@ def shoe_size(playername)
   game_hash.each { |team, teamdata|
     teamdata[:players].each { |player, data|
       if player == playername
-        data[:shoe_size][0]
+        return data[:shoe_size][0]
       end
     }
   }
@@ -139,7 +139,7 @@ end
 def team_colors(teamname)
   game_hash.each { |team, teamdata|
     if team[:name] == teamname
-        team[:colors]
+        return team[:colors]
     end
   }
 end
@@ -148,5 +148,15 @@ def team_names
   hometeam = game_hash[:home][:team][0]
   awayteam = game_hash[:away][:team][0]
   teams = [hometeam, awayteam]
-  teams
+  return teams
+end
+
+def player_numbers(teamname)
+  game_hash.each { |team, teamdata|
+    if teamdata[:name] == teamname
+      teamdata[:players].map { |player, data|
+        return data[:number]
+      }
+    end
+  }
 end
