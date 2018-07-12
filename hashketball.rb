@@ -219,3 +219,29 @@ def winning_team
     puts "tie game"
   end
 end
+
+def most_points_scored
+  mostpoints = 0
+  bestplayer = ""
+  game_hash.each { |team, teamdata|
+    teamdata[:players].each { |player, data|
+      if data[:points] > mostpoints
+        mostpoints = data[:points]
+        bestplayer = player
+      end
+    }
+  }
+  return bestplayer
+end
+
+def player_with_longest_name
+  longestname = ""
+  longestlength = 0
+  game_hash.each { |team, teamdata|
+    teamdata[:players].each { |player, data|
+      if player.length > longestlength
+        longestname = player
+      end
+    }
+  }
+end
