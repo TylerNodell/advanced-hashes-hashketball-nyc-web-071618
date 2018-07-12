@@ -215,7 +215,7 @@ def winning_team
     game_hash[:home][:team_name]
   elsif awaypoints > homepoints
     game_hash[:away][:team_name]
-  else 
+  else
     puts "tie game"
   end
 end
