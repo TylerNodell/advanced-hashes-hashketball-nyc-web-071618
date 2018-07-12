@@ -125,3 +125,13 @@ def num_points_scored(playername)
     }
   }
 end
+
+def shoe_size(playername)
+  game_hash.each { |team, teamdata|
+    teamdata[:players].each { |player, data|
+      if player == playername
+        data[:shoe_size]
+      end
+    }
+  }
+end
