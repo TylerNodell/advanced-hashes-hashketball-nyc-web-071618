@@ -153,12 +153,13 @@ def team_names
 end
 
 def player_numbers(teamname)
+  numbers = []
   game_hash.map { |team, teamdata|
     if teamdata[:team_name] == teamname
       teamdata[:players].map { |player, data|
-        data[:number]
+        numbers << data[:number]
       }
     end
   }
-  binding.pry
+  numbers
 end
