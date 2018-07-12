@@ -31,7 +31,7 @@ def game_hash
           points: 17,
           rebounds: 19,
           assist: 10,
-          steals: 3
+          steals: 3,
           blocks: 1,
           slam_dunks: 15
         },
