@@ -120,7 +120,7 @@ def num_points_scored(playername)
   game_hash.each { |team, teamdata|
     teamdata[:players].each { |player, data|
       if player == playername
-        data[:points]
+        data[:points][0]
       end
     }
   }
@@ -130,7 +130,7 @@ def shoe_size(playername)
   game_hash.each { |team, teamdata|
     teamdata[:players].each { |player, data|
       if player == playername
-        data[:shoe_size]
+        data[:shoe_size][0]
       end
     }
   }
