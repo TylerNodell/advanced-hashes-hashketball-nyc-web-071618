@@ -173,3 +173,17 @@ def player_stats(playername)
     }
   }
 end
+
+def big_shoe_rebounds
+  biggestshoe = 0
+  biggestpoints = 0
+  game_hash.each { |team, teamdata|
+    teamdata[:players].each { |player, data|
+      if data[:shoe] > 0
+        biggestshoe = data[:shoe]
+        biggestpoints = data[:points]
+      end
+    }
+  }
+  return biggestpoints
+end
